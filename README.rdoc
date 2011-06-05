@@ -1,10 +1,10 @@
 = Tasteful Routes
 
-An opinionated variation of the standard Rails RESTful routes that changes has singular member action URLs.
+An opinionated variation of the standard Rails RESTful routes that has singular member action URLs.
 
 == Usage
 
-Simply define your routes with `tasteful_resources` as you normally would with the {resources method}[http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html#method-i-resources]:
+Simply define your routes with +tasteful_resources+ as you normally would with the {resources method}[http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html#method-i-resources]:
 
   YourApp::Application.routes.draw do
     tasteful_resources :jobs
@@ -20,7 +20,7 @@ This results in the following routes:
            PUT    /job/:id(.:format)      {:controller=>"jobs", :action=>"update"}
            DELETE /job/:id(.:format)      {:controller=>"jobs", :action=>"destroy"}
 
-It should work with all the same options as `resources`, including nesting:
+It should work with all the same options as +resources+, including nesting:
 
   YourApp::Application.routes.draw do
     tasteful_resources :jobs do
@@ -46,9 +46,9 @@ This time resulting in:
                 DELETE /job/:id(.:format)                   {:controller=>"jobs", :action=>"destroy"}
 
 
-=== Maintainers
+== Maintainers
 
-* Hugh Evans (http://github.com/hughevans)
+* {Hugh Evans}[http://github.com/hughevans]
 
 == License
 
