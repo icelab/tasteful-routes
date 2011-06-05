@@ -1,0 +1,55 @@
+== Tasteful Routes
+
+An alternative to Rails' default RESTful routes that resolves member actions to singular URLs, eg. /job/1 instead of /jobs/1. The collection methods continue to operate on the plural /jobs (index and create).
+
+== Usage
+
+Define your routes as you normally would with the resources method:
+
+  YourApp::Application.routes.draw do
+    tasteful_resources :jobs
+  end
+
+Resulting in the following routes:
+
+      jobs GET    /jobs(.:format)         {:controller=>"jobs", :action=>"index"}
+           POST   /jobs(.:format)         {:controller=>"jobs", :action=>"create"}
+   new_job GET    /job/new(.:format)      {:controller=>"jobs", :action=>"new"}
+  edit_job GET    /job/:id/edit(.:format) {:controller=>"jobs", :action=>"edit"}
+       job GET    /job/:id(.:format)      {:controller=>"jobs", :action=>"show"}
+           PUT    /job/:id(.:format)      {:controller=>"jobs", :action=>"update"}
+           DELETE /job/:id(.:format)      {:controller=>"jobs", :action=>"destroy"}
+
+It should work with all of the same options as resources including nesting:
+
+  YourApp::Application.routes.draw do
+    tasteful_resources :jobs do
+      tasteful_resources :items
+    end
+  end
+
+This time resulting in:
+
+      job_items GET    /job/:job_id/items(.:format)         {:controller=>"items", :action=>"index"}
+                POST   /job/:job_id/items(.:format)         {:controller=>"items", :action=>"create"}
+   new_job_item GET    /job/:job_id/item/new(.:format)      {:controller=>"items", :action=>"new"}
+  edit_job_item GET    /job/:job_id/item/:id/edit(.:format) {:controller=>"items", :action=>"edit"}
+       job_item GET    /job/:job_id/item/:id(.:format)      {:controller=>"items", :action=>"show"}
+                PUT    /job/:job_id/item/:id(.:format)      {:controller=>"items", :action=>"update"}
+                DELETE /job/:job_id/item/:id(.:format)      {:controller=>"items", :action=>"destroy"}
+           jobs GET    /jobs(.:format)                      {:controller=>"jobs", :action=>"index"}
+                POST   /jobs(.:format)                      {:controller=>"jobs", :action=>"create"}
+        new_job GET    /job/new(.:format)                   {:controller=>"jobs", :action=>"new"}
+       edit_job GET    /job/:id/edit(.:format)              {:controller=>"jobs", :action=>"edit"}
+            job GET    /job/:id(.:format)                   {:controller=>"jobs", :action=>"show"}
+                PUT    /job/:id(.:format)                   {:controller=>"jobs", :action=>"update"}
+                DELETE /job/:id(.:format)                   {:controller=>"jobs", :action=>"destroy"}
+
+
+=== Maintainers
+
+* Hugh Evans (http://github.com/hughevans)
+
+== License
+
+MIT License. Copyright 2011 Icelab http://icelab.com.au
