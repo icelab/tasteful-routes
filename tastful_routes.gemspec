@@ -8,12 +8,13 @@ Gem::Specification.new do |s|
   s.authors           = ["Icelab", "Hugh Evans"]
   s.email             = "hugh@icelab.com.au"
   s.homepage          = "http://github.com/icelab/tasteful_routes"
-  s.summary           = %q{A alternative to Rails' RESTful routes that changes
-                        that resolves member actions to singular URLs.}
-  s.description       = %q{An alternative to Rails' default RESTful routes that
-                        resolves member actions to singular URLs, eg. /job/1 
-                        instead of /jobs/1. The collection methods continue to
-                        operate on the plural /jobs (index and create).}
+  s.summary           = %q{An opinionated variation of the standard Rails
+                        RESTful routes that has singular member action URLs.}
+  s.description       = %q{An opinionated variation of the standard Rails
+                        RESTful routes that has singular member action URLs. For
+                        example, /job/1 instead of /jobs/1. The collection
+                        methods continue to operate on the plural /jobs (index
+                        and create).}
 
   s.rubyforge_project = "tasteful_routes"
 
