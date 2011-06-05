@@ -2,6 +2,12 @@
 
 An opinionated variation of the standard Rails RESTful routes that has singular member action URLs.
 
+== Installation 
+
+In your Gemfile:
+
+  gem "tasteful_routes"
+
 == Usage
 
 Simply define your routes with tasteful_resources as you normally would with the {resources method}[http://api.rubyonrails.org/classes/ActionDispatch/Routing/Mapper/Resources.html#method-i-resources]:
