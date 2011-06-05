@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name              = "tasteful_routes"
   s.version           = TastefulRoutes::VERSION
   s.authors           = ["Icelab", "Hugh Evans"]
-  s.email             = "hugh@icelab.com.au"
+  s.email             = "hugh@artpop.com.au"
   s.homepage          = "http://github.com/icelab/tasteful_routes"
   s.summary           = %q{An opinionated variation of the standard Rails
                         RESTful routes that has singular member action URLs.}
