@@ -7,14 +7,11 @@ Gem::Specification.new do |s|
   s.version           = TastefulRoutes::VERSION
   s.authors           = ["Icelab", "Hugh Evans"]
   s.email             = "hugh@artpop.com.au"
-  s.homepage          = "http://github.com/icelab/tasteful_routes"
+  s.homepage          = "http://github.com/icelab/tasteful-routes"
   s.summary           = %q{An opinionated variation of the standard Rails
                         RESTful routes that has singular member action URLs.}
   s.description       = %q{An opinionated variation of the standard Rails
-                        RESTful routes that has singular member action URLs. For
-                        example, /job/1 instead of /jobs/1. The collection
-                        methods continue to operate on the plural /jobs (index
-                        and create).}
+                        RESTful routes that has singular member action URLs.}
 
   s.rubyforge_project = "tasteful_routes"
 
