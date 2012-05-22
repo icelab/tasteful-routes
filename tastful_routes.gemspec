@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
   s.files             = `git ls-files`.split("\n")
   s.require_path      = "lib"
 
-  s.add_dependency "rails", ">= 3.0.0"
+  s.add_dependency "rails", ">= 3.2.0"
   s.add_development_dependency "rspec", "~> 2.6.0"
 end

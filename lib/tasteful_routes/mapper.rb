@@ -22,7 +22,7 @@ module ActionDispatch::Routing
           return self
         end
 
-        resource_scope(TastefulResource.new(resources.pop, options)) do
+        resource_scope(:resource, TastefulResource.new(resources.pop, options)) do
           yield if block_given?
 
           collection do
