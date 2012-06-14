@@ -1,5 +1,7 @@
 = Tasteful Routes
 
+{<img src="https://secure.travis-ci.org/icelab/tasteful-routes.png" />}[http://travis-ci.org/icelab/tasteful-routes]
+
 An opinionated variation of the standard Rails RESTful routes that has singular member action URLs.
 
 == Installation 
