@@ -1,9 +1,15 @@
 module ActionDispatch::Routing
   class Mapper
+    module Resources
+      silence_warnings do
+        RESOURCE_OPTIONS.push :authenticatable
+      end
+    end
+
     module TastefulResources
       class TastefulResource < ActionDispatch::Routing::Mapper::Resource
         def member_scope
-          "#{path.singularize}/:id"
+          options[:authenticatable] ? "#{path.singularize}(/:id)" : "#{path.singularize}/:id"
         end
 
         def new_scope(new_path)
@@ -11,7 +17,7 @@ module ActionDispatch::Routing
         end
 
         def nested_scope
-          "#{path.singularize}/:#{singular}_id"
+          options[:authenticatable] ? "#{path.singularize}(/:#{singular}_id)" : "#{path.singularize}/:#{singular}_id"
         end
       end
 
